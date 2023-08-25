@@ -48,6 +48,7 @@ router.get('/position', isAuthenticated, new ListPositionController().handle )
 router.post('/player', isAuthenticated, upload.single('file'), new CreatePlayerController().handle )
 router.get('/player', isAuthenticated, new ListPlayersController().handle )
 router.get('/team/player', isAuthenticated, new ListByTeamController().handle )
+router.use('/tmp', express.static('tmp'));
 
 //-- ROTAS GAME
 router.post('/game', isAuthenticated, new CreateGameController().handle )
